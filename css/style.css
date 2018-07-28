@@ -1,0 +1,63 @@
+.intro {
+	height: 420px;
+}
+.about {
+	height: 500px;
+	background-color: #262629;
+}
+body {
+	background-color: #1f1f22;
+	color: white;
+}
+p {
+	color: #aaaaaa;
+}
+.particles {
+	width: 100%;
+	height: 420px;
+	background: #1f1f22;
+	position: fixed;
+	z-index: -1;
+	margin-left:0
+}
+.col-sm {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+h2,a {
+	font-family: 'Varela Round', sans-serif;
+	font-weight: bold;
+}
+.m-desc {
+	background-color: #232323;
+	width: 100%;
+	height: 500px;
+	margin-top: -80px;
+
+}
+.text-new {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 15px;
+	font-size: 20px;
+	text-align: center;
+	width: 1070px;
+	top: 100px;
+	height: 50px;
+	position: relative;
+}
+
+.tour-list {
+	background-color: #232323;
+	width: 100%;
+	height: 500px;
+	margin-top: -80px;
+}
+
+.tour-table {
+    height: 100%;
+    width: 50%;
+    margin: 0px auto;
+}
+* {margin:0;}
+body {background:#000000;}
