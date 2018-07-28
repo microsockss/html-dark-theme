@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+  <title>Final Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Black Bar at top-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Welcome
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link nav" href="/" style="cursor: pointer;">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link nav" href="/about.html" style="cursor: pointer;">About<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="intro">
+  <canvas id="canvas" style="margin-bottom: 5px;" class="particles"></canvas>
+      <div id="buffer" style="display:none;">
+
+
+
+      <script src="js/particle-text.js"></script>
+    </div>
+  </div>
+  <div class="about">
+    <br>
+    <div class="container-fluid" style="text-align: center;">
+      <div class="row">
+        <div class="col-sm">
+          <img src="img/location.svg" alt="info1" style="width: 100px;height: 100px;"><br>
+          <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sit amet enim in tristique.</a>
+        </div>
+        <div class="col-sm">
+          <img src="img/rocket.svg" alt="info2" style="width: 100px; height: 100px; top: 5px; position: relative;"><br><br>
+          <a style="top: 6px; position: relative;">Integer magna elit, facilisis in ipsum sit amet, ornare faucibus felis. Cras id posuere nunc.</a>
+        </div>
+        <div class="col-sm">
+          <img src="img/globe.svg" alt="info3" style="width: 100px; height: 100px;"><br><br>
+          <a style="top: -23px; position: relative;">Proin quis sodales est, eget molestie tortor. Nam viverra purus mauris, vitae tempus arcu viverra.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
