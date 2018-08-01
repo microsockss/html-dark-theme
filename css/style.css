@@ -1,5 +1,9 @@
 .intro {
-	height: 420px;
+	background-size: cover;
+  background-position: center;
+  display: flex;
+  min-height: 400px;
+  height: 100vh;
 }
 .about {
 	height: 500px;
@@ -9,14 +13,15 @@ body {
 	background-color: #1f1f22;
 	color: white;
 }
-p {
+p,li {
 	color: #aaaaaa;
+	text-align: left;
 }
 .particles {
 	width: 100%;
-	height: 420px;
+	height: 100%;
 	background: #1f1f22;
-	position: fixed;
+	position: absolute;
 	z-index: -1;
 	margin-left:0
 }
@@ -24,8 +29,20 @@ p {
 	margin-left: 100px;
 	margin-right: 100px;
 }
+h1 {
+	text-align : left;
+}
 h2,a {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	color: white;
+	height: 23px;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.brand {
+	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 }
 .m-desc {
@@ -33,18 +50,11 @@ h2,a {
 	width: 100%;
 	height: 500px;
 	margin-top: -80px;
-
 }
 .text-new {
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 15px;
-	font-size: 20px;
-	text-align: center;
-	width: 1070px;
-	top: 100px;
-	height: 50px;
-	position: relative;
 }
 
 .tour-list {
@@ -59,5 +69,16 @@ h2,a {
     width: 50%;
     margin: 0px auto;
 }
-* {margin:0;}
-body {background:#000000;}
+div.jumbotron {
+	text-align: center;
+	background-color: rgba(220, 220, 220, 0.5);
+	background-position: center;
+	width: 700px;
+	height: 700px;
+	margin: auto;
+	margin-top: 50px;
+}
+a:hover {
+	color: #aaaaaa;
+	text-decoration: none;
+}
