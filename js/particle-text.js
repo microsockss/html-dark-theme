@@ -1,12 +1,3 @@
-<!--
-Copyright (c) 2018 by ara (https://codepen.io/ara_node/pen/nuJCG)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
 
 var camera = {
 	focus : 400,
@@ -238,7 +229,7 @@ vertex3d.prototype = {
 	var strokeColor = "rgba(255,255,255,0.1)";
 	var backgroundColor = "rgba(0,0,0,1)";
 	var vibrateFlag = false;
-
+	
 	var canvas = document.getElementById("canvas");
 	var canvasWidth = window.innerWidth;
 	var canvasHeight = window.innerHeight;
@@ -246,15 +237,15 @@ vertex3d.prototype = {
 	canvas.height = canvasHeight;
 	var ctx	= canvas.getContext("2d");
 	ctx.strokeStyle = strokeColor;
-
+		
 	window.onresize = function() {
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
 		camera.display.x = window.innerWidth/2;
 		camera.display.y = window.innerHeight/2;
 	};
-
-
+	
+	
 	/* class */
 	var	sphere = function(arg) {
 		this.flag = true;
@@ -264,7 +255,7 @@ vertex3d.prototype = {
 		this.targetCenter = arg.center;
 		this.radius = 0;
 		this.targetRadius = arg.radius;
-
+		
 		this.degree = new Array();
 		this.freeDegreeSpeed = new Array();
 		for(var j=0; j<this.particleNum; j++) {
@@ -291,7 +282,7 @@ vertex3d.prototype = {
 						redo();
 					};
 				};
-				redo();
+				redo();	
 			};
 		};
 		this.charsMap["@"] = new Array();
@@ -302,7 +293,7 @@ vertex3d.prototype = {
 		for(var i=0; i<this.particleNum; i++) {
 			this.charsMap["_"][i] = {theta:0, phi:0};
 		};
-
+		
 		this.veticies = new Array();
 		for(var i=0; i<this.particleNum; i++) {
 			this.veticies[i] = new vertex3d({});
@@ -316,7 +307,7 @@ vertex3d.prototype = {
 					break;
 				} else {
 					this.flag = false;
-				};
+				};	
 			};
 			this.radius =  this.radius + (this.targetRadius - this.radius) / 8;
 			this.center.x = this.center.x + (this.targetCenter.x - this.center.x) / 8;
@@ -353,11 +344,11 @@ vertex3d.prototype = {
 				ctx.beginPath();
 				for(var i=0; i<this.veticies.length; i++) {
 					for(var j=i; j<this.veticies.length; j++) {
-
-						var distance =
+						
+						var distance = 
 						(this.veticies[i].affineOut.x-this.veticies[j].affineOut.x)*(this.veticies[i].affineOut.x-this.veticies[j].affineOut.x) +
 						(this.veticies[i].affineOut.y-this.veticies[j].affineOut.y)*(this.veticies[i].affineOut.y-this.veticies[j].affineOut.y);
-
+						
 						if(distance <= this.radius*3) {
 							ctx.moveTo(
 								this.veticies[i].affineOut.x,
@@ -396,8 +387,8 @@ vertex3d.prototype = {
 			s[i].draw();
 		};
 	};
-
-
+	
+	
 	var chars = {
 		A : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAoVJREFUeNrsnO2RgkAQRGXrEsAQMAQJgVwMwRgMwVg0BA1BQpAQOErrPsrjdgfKnR3gzW/h5NE99M7iZW3brihZORAAC1jAAhawgAUCYAELWMACFrBAACxgAQtYwAIWCIAFLGABa0DtdrtMXGVZJvyqWfJ9w81mU9e1/PP3+z3P8yUqq2maQaS6ul6vC7Xh+XweeshyYQ2VFcqKfshMGnz3gBtx1O12K4piWcoabahU4pokrBGdbrmwUvV4o7C2221VVdjwJ456YOWPsta2nE0PdrLqxGXNiR82YQVXf8uC5fdRMEYlgZUslK7X665teUYLz8+YGj+k6VldUPKQyr/KWjR1Bj343do96SFJNE2mLEnD8nculAWsgc8yISz9Z6KzJqvfjKylLWdNVvIGD6xX6/nFBayiV2X/ncqT1yYPq36Ufwltdt3jTMnK+CLRHKwX3wFrACxTK0TtqUNw7+vv9wkeorYzpqqsoAp6g1UQhJq4nCkP9pouCEtt/KAKK3hVvanKH7U0e7wtG/aKyFCPb7XqOSmOVKfTSeESnB1ZaWZd6zaM2obnBmsGytILpeNexZKXws6YkrIU7rzCM3E+sBSiKcqy17PKslTgFftaNGA1TeN/a+EZ0/f7vecMh8Mh+Icul0twbWQ9wXfxOvg1qqryn0RyLcfjcfIJXmLA4GhBIpnYTteAJWm9wHqnsiSz0Ng7Y9Fh+V/Fks9hhJ07qricBQ+uBDv1win7tGFJgrVkTbcIWBJlCS0WVF/sHB8dluRWC2FJxDXip7FWYAnvs3C0InRiPHFl/CNqc1MHYAGLAhawgAUsYAGLAhawgAUsYAGLAhawgAUsYAGLAtZb6lOAAQB0jf7CahauSAAAAABJRU5ErkJggg==",
 		B : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAoJJREFUeNrs3O1xolAUxvFNhgZswRa0BCmBFrAEKAFK0BKkBC0BS9AStAT2ybLjMPvFo0tOuJf/+ZAxMzAJv7n38tyX5KPrul+UrT4hAAsssMACCywIwAILLLDAAgsCsMACCyywwIIALLDACqgSnx+TpunpdHrjxsVisVqt+q/L5XKz2ejzj2l1LqWHHOsXzrJst9t1P1HhYfWlVnY8Hp2xQh2zrterunZZlgzw1qrrervdgmWt/Z8Cy1rqjPf7HSxTScqncUUSSn2wkuk8cJ88+8/n8/mlnqWXo2553B4/lh5V0WnYuZqmUZORguV2B6zpdkM1tDzP27Y1EjiM8QGMWUVRsOrwQve0XPbeRD02LE0DaVkj1+hz9SCxfNJ5JFjG6PDduQGsuLDUB+u6fnpZlmUOy83JZI3UoJQGlOAtY5bi67zmhtJJ07RnevU96PAq/KpA1+CHs6Lb7cYavElKc2+3zbGAsdRaL5eLw0sweCwZHQ4H5w3XULH0Eliv1w6T50i6Yb91aElhYP2tsizdtg5jWHVQcPVpX5Es0ah9qVfOCEtR4BH/lAkUoIqisK/8eTSu6ST4IdajlM6N8z7FiLkneBFUVWVpX29MKiMcs+SVZZlxrYIB3rq+TsuaUIEFFlhgWdcYwBoZ67s3+sPYN2yaBqznIXO/36dparx+Rif/+q2w4bcvJXJjyo8ESzT/s0zMKZrx549gfR2ldNjpiQFL47rPudPPCKSGB8LBeiLF9v3zEb2qqrZtPTelk+CYFNPzPNe7z/8UcxJEI3r8TbnClOdJkH/qg39EPbucBRZYYIFFgQUWWGCBBRYFFlhggQUWWBRYYIEFFlgzqd8CDAAuDkL9BnlXDAAAAABJRU5ErkJggg==",
@@ -479,8 +470,8 @@ vertex3d.prototype = {
 		var changer = function() {
 			setTimeout(function() {
 				s[changeIncrement].type = text[changeIncrement];
-				s[changeIncrement].targetCenter = center[changeIncrement];
-				s[changeIncrement].targetRadius = sphereRadius;
+				s[changeIncrement].targetCenter = center[changeIncrement]; 
+				s[changeIncrement].targetRadius = sphereRadius; 
 				changeIncrement++;
 				if(changeIncrement < charNum) {
 					changer();
@@ -492,7 +483,7 @@ vertex3d.prototype = {
 		};
 		changer();
 	};
-
+	
 	var fullSet = function() {
 		var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ__?!1234567890";
 		var col = 10;
@@ -526,10 +517,10 @@ vertex3d.prototype = {
 		{text:"@@@@@@@@", sphereRadius:60 + Math.random()*60, sphereSpace:200, unitTime:100, time:4000}
 		*/
 	];
-
+	
 	var textSetChangerIncrement = 0;
 	var textSetChanger = function() {
-		setTimeout(function() {
+		setTimeout(function() {			
 			textChanger(
 				textSet[textSetChangerIncrement].text,
 				textSet[textSetChangerIncrement].sphereRadius,
@@ -545,7 +536,7 @@ vertex3d.prototype = {
 	};
 	var vibrateCV = new closeValue(200, 500);
 	var invertCV = new closeValue(1000, 1200);
-
+	
 	var start = function() {
 		setup();
 		setInterval(function() {
@@ -555,11 +546,11 @@ vertex3d.prototype = {
 				vibrateFlag = false;
 			};
 			if(invertCV.execution() > 0.7) {
-				strokeColor = "rgba(0,0,0,0.1)";
-				backgroundColor = "rgba(255,255,255,1)";
+				strokeColor = "white";
+				backgroundColor = "#1F1F22";
 			} else {
-				strokeColor = "rgba(255,255,255,0.1)";
-				backgroundColor = "rgba(0,0,0,1)";
+				strokeColor = "white";
+				backgroundColor = "#1F1F22";
 			};
 			ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 			ctx.fillStyle = backgroundColor;
