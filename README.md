@@ -3,4 +3,4 @@ Custom dark theme html template using motion graphic typeface. A <a href="http:/
 
 # Screenshots
 <img src="https://i.imgur.com/oM0raL3.png">
-<img src="https://i.imgur.com/03Op9az.png">
+<img src="https://i.imgur.com/sebImrI.png">
